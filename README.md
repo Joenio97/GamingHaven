@@ -24,7 +24,15 @@ metodos: cadastrar, gerenciar
 
 **Class  JogoPc(Jogo):**
 
-super( ).__init__( atribtutos Jogos)
+super( ).__init__( atributos Jogos)
+
+**Class JogoMobile(jogo)**
+
+super( ).__init__( atributos Jogos)
+
+**Class JogoConsole(Jogo)
+
+super( ).__init__( atributos Jogos)
 
 metodos:
 
@@ -34,13 +42,7 @@ atributos ( nome )
 
 metodos: CriarColecao, adicionar, remover, editar, evitarDuplicação, listar
 
-**Class Status:**
-
-atributos: nãoIniciado, Jogando, finalizado
-
-**Class Relatorio(Status)**
-
-Self( ).__init__(atributos Status)
+**Class Relatorio**
 
 atributos: tempoJogado
 
