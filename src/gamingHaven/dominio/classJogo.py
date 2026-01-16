@@ -1,69 +1,73 @@
 from datetime import date
 
-
 class Jogo:
-    STATUS_VALIDOS = {"NAO_INICIADO", "JOGANDO", "FINALIZADO"}
-
     def __init__(self, titulo, genero, plataforma):
         if not titulo:
             raise ValueError("Título não pode ser vazio")
 
-        self.titulo = titulo
+        self._titulo = titulo
         self.genero = genero
         self.plataforma = plataforma
 
-        self._horas_jogadas = 0.0
-        self._avaliacao = None
+        self._horas_jogadas = 0
+        self._nota = None
         self.status = "NAO_INICIADO"
 
         self.data_inicio = None
         self.data_fim = None
 
-    # ---------- Encapsulamento ----------
+    # ---------- ENCAPSULAMENTO ----------
+    @property
+    def titulo(self):
+        return self._titulo
+
     @property
     def horas_jogadas(self):
         return self._horas_jogadas
 
-    @horas_jogadas.setter
-    def horas_jogadas(self, valor):
-        if valor < 0:
-            raise ValueError("Horas jogadas não podem ser negativas")
-        self._horas_jogadas = valor
-
     @property
-    def avaliacao(self):
-        return self._avaliacao
+    def nota(self):
+        return self._nota
 
-    @avaliacao.setter
-    def avaliacao(self, nota):
-        if nota is not None and not (0 <= nota <= 10):
-            raise ValueError("Avaliação deve estar entre 0 e 10")
-        self._avaliacao = nota
+    @nota.setter
+    def nota(self, valor):
+        if not 0 <= valor <= 10:
+            raise ValueError("Nota deve estar entre 0 e 10")
+        if self.status != "FINALIZADO":
+            raise ValueError("Só é possível avaliar jogo finalizado")
+        self._nota = valor
 
-    # ---------- Regras de negócio ----------
-    def iniciar(self):
-        self.status = "JOGANDO"
-        self.data_inicio = date.today()
+    # ---------- REGRAS DE NEGÓCIO ----------
+    def adicionar_horas(self, horas):
+        if horas < 0:
+            raise ValueError("Horas não podem ser negativas")
+
+        self._horas_jogadas += horas
+
+        if self.status == "NAO_INICIADO":
+            self.status = "JOGANDO"
+            self.data_inicio = date.today()
 
     def finalizar(self):
         if self.horas_jogadas < 1:
             raise ValueError("Não é possível finalizar com menos de 1h jogada")
+
         self.status = "FINALIZADO"
         self.data_fim = date.today()
 
     def reiniciar(self):
         self.status = "JOGANDO"
-        self.horas_jogadas = 0
+        self._horas_jogadas = 0
+        self._nota = None
+        self.data_inicio = date.today()
         self.data_fim = None
 
+    # ---------- MÉTODOS ESPECIAIS ----------
     def __str__(self):
         return f"{self.titulo} ({self.plataforma}) - {self.status}"
 
     def __repr__(self):
-        return (
-            f"Jogo(titulo={self.titulo}, genero={self.genero}, "
-            f"plataforma={self.plataforma}, horas={self.horas_jogadas})"
-        )
+        return f"Jogo(titulo='{self.titulo}', plataforma='{self.plataforma}')"
 
     def __eq__(self, other):
         return (
@@ -74,3 +78,4 @@ class Jogo:
 
     def __lt__(self, other):
         return self.horas_jogadas < other.horas_jogadas
+
