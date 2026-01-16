@@ -83,3 +83,49 @@ Nessa etapa, foi desenvolvida a implementação inicial do sistema de catálogo 
 
   * Organização do código em módulos visando fácil evolução do projeto.
 
+## Entrega 3
+
+### 🎮 GamingHaven - Catálogo de Jogos
+Aplicação CLI (Command Line Interface) para gerenciamento e persistência de uma biblioteca de jogos pessoal.
+
+📋 Instruções de Uso
+Pré-requisitos:
+
+Python 3.10 ou superior.
+
+Poetry instalado.
+
+**Instalação:**
+
+1.Clone o repositório.
+
+2.No terminal, dentro da pasta do projeto, instale as dependências, digite o seguinte comando e aperte ENTER:
+
+
+poetry install
+
+**Executando a aplicação:**
+
+Para iniciar o menu principal, utilize o comando:
+
+poetry run catalogo
+
+### Arquitetura e Design
+
+O projeto utiliza os princípios da Programação Orientada a Objetos (POO) e uma estrutura de pastas organizada para separar as responsabilidades.
+
+Decisões de Design:
+
+* Herança: Utilizamos uma classe base Jogo que contém atributos comuns (título, gênero, plataforma). Classes específicas como jogoPC, jogoMobile e jogoConsole herdam de Jogo, permitindo comportamentos específicos e evitando repetição de código.
+
+* Separação de Camadas: * dominio: Contém as regras de negócio e definições de objetos.
+
+* dados: Responsável pela persistência (neste caso, leitura e escrita em arquivos JSON).
+
+* cli.py: Gerencia a interação com o usuário.
+
+* Persistência: Optamos por JSON para o armazenamento de dados por ser um formato leve, legível por humanos e nativamente suportado pelo Python, facilitando a portabilidade do catálogo.
+
+* Gestão de Dependências: O Poetry foi escolhido para garantir que o ambiente virtual e as bibliotecas sejam consistentes em qualquer máquina.
+
+
