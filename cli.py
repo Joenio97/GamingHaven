@@ -1,6 +1,9 @@
 import json
-from dominio.jogo import JogoPC, JogoConsole, JogoMobile
-from dados.repositorio_json import salvar_jogos, carregar_jogos
+from gamingHaven.dominio.classJogo import Jogo
+from gamingHaven.dominio.jogoConsole import JogoConsole
+from gamingHaven.dominio.jogoMobile import JogoMobile
+from gamingHaven.dominio.jogoPc import JogoPC
+from gamingHaven.dados.repositorio_json import salvar_jogos, carregar_jogos
 
 def carregar_settings():
     with open("settings.json", "r", encoding="utf-8") as f:

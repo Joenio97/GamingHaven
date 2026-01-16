@@ -5,6 +5,16 @@ description = "Catalogo pessoal de jogos digitais"
 authors = [
     {name = "Joenio_Araujo",email = "joenio04araujo@gmail.com"}
 ]
+packages = [{ include = "gaminghaven", from = "src" }]
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+
+[tool.poetry.scripts]
+catalogo = "gaminghaven.cli:main"
+
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [

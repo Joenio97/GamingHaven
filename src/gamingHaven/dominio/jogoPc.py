@@ -1,4 +1,4 @@
-from classJogo import Jogo
+from gamingHaven.dominio.classJogo import Jogo
 
 
 class JogoPC(Jogo):

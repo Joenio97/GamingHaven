@@ -1,4 +1,4 @@
-from classJogo import Jogo
+from gamingHaven.dominio.classJogo import Jogo
 
 class JogoConsole(Jogo):
     def __init__(self, titulo, genero):
