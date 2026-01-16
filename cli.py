@@ -33,6 +33,7 @@ def cadastrar_jogo(jogos):
         return
 
     jogos.append(jogo)
+    salvar_jogos(jogos)
     print("Jogo cadastrado com sucesso!")
 
 def atualizar_progresso(jogos):

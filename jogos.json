@@ -1,0 +1,42 @@
+[
+    {
+        "titulo": "naruto",
+        "genero": "açao",
+        "plataforma": "Mobile",
+        "horas": 1.0,
+        "status": "JOGANDO",
+        "nota": null,
+        "inicio": "2026-01-16",
+        "fim": null
+    },
+    {
+        "titulo": "naruto",
+        "genero": "açao",
+        "plataforma": "Console",
+        "horas": 2.0,
+        "status": "FINALIZADO",
+        "nota": 9.0,
+        "inicio": "2026-01-16",
+        "fim": "2026-01-16"
+    },
+    {
+        "titulo": "god of war",
+        "genero": "açao",
+        "plataforma": "Console",
+        "horas": 1.0,
+        "status": "JOGANDO",
+        "nota": null,
+        "inicio": "2026-01-16",
+        "fim": null
+    },
+    {
+        "titulo": "gta",
+        "genero": "açao",
+        "plataforma": "PC",
+        "horas": 0,
+        "status": "NAO_INICIADO",
+        "nota": null,
+        "inicio": null,
+        "fim": null
+    }
+]
