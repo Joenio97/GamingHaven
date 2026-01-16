@@ -11,15 +11,12 @@ def main():
 
     jogo_console = JogoConsole(
         titulo="God of War",
-        genero="Ação",
-        console="PlayStation 5"
-    )
+        genero="Ação",)
 
     jogo_mobile = JogoMobile(
         titulo="Clash Royale",
-        genero="Estratégia",
-        sistema="Android"
-    )
+        genero="Estratégia",)
+
 
     print("=== Jogos cadastrados ===")
     print(jogo_pc)
