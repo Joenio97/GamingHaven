@@ -2,22 +2,19 @@
 name = "gaminghaven"
 version = "0.1.0"
 description = "Catalogo pessoal de jogos digitais"
-authors = [
-    {name = "Joenio_Araujo",email = "joenio04araujo@gmail.com"}
-]
+authors = ["Joenio_Araujo <joenio04araujo@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "gaminghaven", from = "src" }]
+packages = [{include = "gaminghaven", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 
-[tool.poetry.group.dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
 
 [tool.poetry.scripts]
 catalogo = "gaminghaven.cli:main"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
