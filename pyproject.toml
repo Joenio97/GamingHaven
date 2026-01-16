@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "gaminghaven"
+name = "gamingHaven"
 version = "0.1.0"
 description = "Catalogo pessoal de jogos digitais"
 authors = ["Joenio_Araujo <joenio04araujo@gmail.com>"]
 readme = "README.md"
-packages = [{include = "gaminghaven", from = "src"}]
+packages = [{include = "gamingHaven", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
