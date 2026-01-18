@@ -1,7 +1,7 @@
 import json
 from gamingHaven.dominio.classJogo import Jogo
 from gamingHaven.dominio.jogoPc import JogoPC
-from gamingHaven.dominio.jogoConsole import JogoConsole
+from gamingHaven.dominio.JogoConsole import JogoConsole
 from gamingHaven.dominio.jogoMobile import JogoMobile
 
 
