@@ -1,4 +1,4 @@
-from gamingHaven.dominio.Colecao import Colecao
+from gamingHaven.dominio.colecao import Colecao
 
 class GerenciadorColecao:
     def __init__(self, nome):
